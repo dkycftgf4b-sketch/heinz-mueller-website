@@ -3,167 +3,302 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Heinz Müller Heizungs- und Sanitärbetrieb Stuttgart</title>
+<title>Heinz Müller Heizungs- & Sanitärbetrieb Stuttgart</title>
 
 <style>
-*{
-    box-sizing:border-box;
-}
-
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
     margin:0;
     font-family:Arial, Helvetica, sans-serif;
-    color:#1d1d1d;
+    color:#102033;
+    background:#f5f7fa;
     line-height:1.6;
-    background:#f7f9fb;
 }
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
 
-header{
-    background:linear-gradient(rgba(10,45,75,0.85),rgba(10,45,75,0.85)),
-    url("https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1600&q=80");
-    background-size:cover;
-    background-position:center;
+.topbar{
+    background:#071827;
     color:white;
-    text-align:center;
-    padding:90px 20px;
+    padding:10px 20px;
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+    font-size:14px;
 }
 
 nav{
-    background:#0f3d63;
-    color:white;
-    padding:15px;
-    text-align:center;
     position:sticky;
     top:0;
-    z-index:10;
+    z-index:100;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(12px);
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    padding:12px 24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
 
-nav a{
-    color:white;
-    text-decoration:none;
-    margin:0 12px;
+.logo img{
+    height:52px;
+    width:auto;
+}
+
+.navlinks a{
+    margin-left:18px;
     font-weight:bold;
+    color:#0b253f;
 }
 
-header h1{
-    font-size:42px;
-    margin-bottom:15px;
+.hero{
+    min-height:88vh;
+    background:
+    linear-gradient(90deg,rgba(4,18,34,.90),rgba(4,18,34,.55),rgba(4,18,34,.18)),
+    url("EB8E3220-00D0-48BE-8B87-549759420723.png");
+    background-size:cover;
+    background-position:center;
+    color:white;
+    display:flex;
+    align-items:center;
+    padding:90px 24px;
 }
 
-header p{
+.hero-content{
+    max-width:1150px;
+    width:100%;
+    margin:auto;
+}
+
+.badge{
+    display:inline-block;
+    background:#d92f2f;
+    color:white;
+    padding:9px 16px;
+    border-radius:999px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:58px;
+    line-height:1.08;
+    max-width:760px;
+    margin:0 0 20px;
+}
+
+.hero p{
     font-size:22px;
+    max-width:680px;
+    color:#e8eef5;
+}
+
+.buttons{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+    margin-top:30px;
 }
 
 .btn{
-    display:inline-block;
-    margin-top:25px;
-    background:#f5a623;
-    color:#111;
-    padding:14px 24px;
-    border-radius:8px;
-    text-decoration:none;
+    padding:15px 24px;
+    border-radius:12px;
     font-weight:bold;
+    display:inline-block;
+}
+
+.primary{
+    background:#d92f2f;
+    color:white;
+}
+
+.secondary{
+    background:white;
+    color:#0b253f;
 }
 
 section{
-    max-width:1100px;
+    max-width:1150px;
     margin:auto;
-    padding:60px 20px;
+    padding:75px 24px;
 }
 
 h2{
-    color:#0f3d63;
-    font-size:32px;
-    margin-bottom:25px;
+    font-size:38px;
+    color:#0b253f;
+    margin-top:0;
 }
 
 .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:25px;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:24px;
 }
 
 .card{
     background:white;
-    padding:25px;
-    border-radius:14px;
-    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+    padding:28px;
+    border-radius:22px;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
 }
 
 .card h3{
-    color:#0f3d63;
+    color:#0b253f;
+    margin-top:10px;
 }
 
-.highlight{
-    background:#0f3d63;
+.icon{
+    font-size:38px;
+}
+
+.dark{
+    max-width:none;
+    background:#071827;
     color:white;
+}
+
+.dark-inner{
+    max-width:1150px;
+    margin:auto;
+    padding:75px 24px;
+}
+
+.dark h2{color:white}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
     text-align:center;
-    padding:55px 20px;
 }
 
-.highlight h2{
-    color:white;
+.stat{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.12);
+    padding:28px;
+    border-radius:20px;
 }
 
-.reviews{
-    background:#eef4f8;
+.stat strong{
+    color:#d92f2f;
+    font-size:38px;
+    display:block;
 }
 
-.review{
-    font-style:italic;
-}
-
-.contact-box{
+.photo-box{
     background:white;
-    padding:30px;
-    border-radius:14px;
-    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:0 15px 45px rgba(0,0,0,.12);
 }
 
-input, textarea{
+.photo-box img{
     width:100%;
-    padding:14px;
-    margin:10px 0;
+}
+
+.contact{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:28px;
+}
+
+input,textarea{
+    width:100%;
+    padding:15px;
     border:1px solid #ccc;
-    border-radius:8px;
+    border-radius:12px;
+    margin-bottom:12px;
     font-size:16px;
 }
 
 button{
-    background:#0f3d63;
-    color:white;
+    width:100%;
+    padding:16px;
     border:none;
-    padding:14px 24px;
-    border-radius:8px;
+    background:#0b253f;
+    color:white;
+    border-radius:12px;
     font-size:16px;
     font-weight:bold;
 }
 
+.note{
+    color:#666;
+    font-size:14px;
+}
+
 footer{
-    background:#111;
+    background:#071827;
     color:white;
     text-align:center;
-    padding:30px 20px;
+    padding:35px 20px;
 }
 
-.small{
-    font-size:14px;
-    color:#555;
+.floating{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    z-index:999;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
 }
 
-@media(max-width:600px){
-    header h1{
-        font-size:32px;
+.floating a{
+    background:#d92f2f;
+    color:white;
+    padding:14px 18px;
+    border-radius:999px;
+    font-weight:bold;
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+.whatsapp{
+    background:#25D366!important;
+}
+
+@media(max-width:760px){
+    nav{
+        display:block;
+        text-align:center;
     }
 
-    header p{
+    .logo img{
+        margin:auto;
+        height:46px;
+    }
+
+    .navlinks{
+        margin-top:10px;
+    }
+
+    .navlinks a{
+        display:inline-block;
+        margin:6px;
+        font-size:14px;
+    }
+
+    .hero{
+        min-height:82vh;
+        background:
+        linear-gradient(rgba(4,18,34,.82),rgba(4,18,34,.78)),
+        url("EB8E3220-00D0-48BE-8B87-549759420723.png");
+        background-size:cover;
+        background-position:center;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero p{
         font-size:18px;
     }
 
-    nav a{
-        display:block;
-        margin:8px 0;
+    .contact{
+        grid-template-columns:1fr;
     }
 }
 </style>
@@ -171,131 +306,146 @@ footer{
 
 <body>
 
+<div class="topbar">
+    <span>📍 Stuttgart & Umgebung</span>
+    <span>☎ 0711 12345678</span>
+    <span>✉ info@heinz-mueller-heizung.de</span>
+</div>
+
 <nav>
-    <a href="#start">Start</a>
-    <a href="#leistungen">Leistungen</a>
-    <a href="#ueber-uns">Über uns</a>
-    <a href="#kontakt">Kontakt</a>
-    <a href="#impressum">Impressum</a>
+    <div class="logo">
+        <img src="FD772E87-7741-41FE-B300-E9CA8B80A04A.png" alt="Heinz Müller Logo">
+    </div>
+
+    <div class="navlinks">
+        <a href="#leistungen">Leistungen</a>
+        <a href="#ueber-uns">Über uns</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="#impressum">Impressum</a>
+    </div>
 </nav>
 
-<header id="start">
-    <h1>Heinz Müller Heizungs- und Sanitärbetrieb</h1>
-    <p>Ihr zuverlässiger Fachbetrieb in Stuttgart seit 1945</p>
-    <a class="btn" href="tel:071112345678">Jetzt anrufen</a>
-</header>
+<header class="hero">
+    <div class="hero-content">
+        <span class="badge">Meisterbetrieb seit 1945</span>
+        <h1>Heizung & Sanitär vom Fachbetrieb in Stuttgart</h1>
+        <p>
+            Zuverlässige Handwerksarbeit, moderne Technik und persönliche Beratung:
+            Ihr Partner für Heizungsbau, Sanitär, Badsanierung und Wartung.
+        </p>
 
-<section>
-    <h2>Willkommen</h2>
-    <p>
-        Seit über 80 Jahren steht der Heinz Müller Heizungs- und Sanitärbetrieb
-        für Qualität, Zuverlässigkeit und saubere Handwerksarbeit.
-        Wir betreuen Privatkunden, Hausverwaltungen und Gewerbekunden in Stuttgart
-        und Umgebung.
-    </p>
-</section>
+        <div class="buttons">
+            <a class="btn primary" href="tel:071112345678">Jetzt anrufen</a>
+            <a class="btn secondary" href="#kontakt">Anfrage senden</a>
+        </div>
+    </div>
+</header>
 
 <section id="leistungen">
     <h2>Unsere Leistungen</h2>
 
     <div class="grid">
         <div class="card">
+            <div class="icon">🔥</div>
             <h3>Heizungsbau</h3>
-            <p>Planung, Installation und Modernisierung moderner Heizungsanlagen.</p>
+            <p>Planung, Installation und Modernisierung effizienter Heizungsanlagen.</p>
         </div>
 
         <div class="card">
+            <div class="icon">🚿</div>
             <h3>Sanitärinstallation</h3>
-            <p>Installation, Reparatur und Wartung von Wasser- und Sanitäranlagen.</p>
+            <p>Fachgerechte Installation, Reparatur und Wartung rund um Wasser und Bad.</p>
         </div>
 
         <div class="card">
+            <div class="icon">🛁</div>
             <h3>Badsanierung</h3>
-            <p>Von der kleinen Modernisierung bis zum komplett neuen Badezimmer.</p>
+            <p>Moderne Badezimmer aus einer Hand — sauber geplant und umgesetzt.</p>
         </div>
 
         <div class="card">
-            <h3>Wartung & Notdienst</h3>
-            <p>Zuverlässige Wartung und schnelle Hilfe bei Störungen.</p>
+            <div class="icon">🛠️</div>
+            <h3>Wartung & Service</h3>
+            <p>Regelmäßige Wartung für Sicherheit, Effizienz und lange Lebensdauer.</p>
         </div>
     </div>
 </section>
 
-<div class="highlight">
-    <h2>Tradition trifft moderne Technik</h2>
-    <p>
-        Persönliche Beratung, faire Preise und fachgerechte Ausführung —
-        dafür stehen wir seit 1945.
-    </p>
+<div class="dark">
+    <div class="dark-inner">
+        <h2>Warum Kunden uns vertrauen</h2>
+
+        <div class="stats">
+            <div class="stat"><strong>80+</strong>Jahre Erfahrung</div>
+            <div class="stat"><strong>1945</strong>gegründet</div>
+            <div class="stat"><strong>4.9★</strong>Kundenzufriedenheit</div>
+            <div class="stat"><strong>100%</strong>Handwerk aus Stuttgart</div>
+        </div>
+    </div>
 </div>
 
 <section id="ueber-uns">
-    <h2>Über uns</h2>
+    <h2>Tradition trifft moderne Technik</h2>
+
     <p>
         Der Heinz Müller Heizungs- und Sanitärbetrieb ist ein traditionsreicher
-        Handwerksbetrieb mit Sitz in Stuttgart. Seit der Gründung im Jahr 1945
-        betreuen wir Kunden mit Erfahrung, Fachwissen und persönlichem Service.
+        Handwerksbetrieb aus Stuttgart. Seit 1945 verbinden wir fachgerechtes
+        Handwerk mit moderner Heizungs- und Sanitärtechnik.
     </p>
-</section>
 
-<section class="reviews">
-    <h2>Kundenstimmen</h2>
+    <p>
+        Unser Anspruch: pünktlich erscheinen, sauber arbeiten, transparent beraten
+        und Lösungen schaffen, die langfristig funktionieren.
+    </p>
 
-    <div class="grid">
-        <div class="card review">
-            ⭐⭐⭐⭐⭐<br><br>
-            „Sehr zuverlässig, sauber gearbeitet und freundlich.“
-            <br><br><strong>- Familie Schneider</strong>
-        </div>
-
-        <div class="card review">
-            ⭐⭐⭐⭐⭐<br><br>
-            „Schnelle Hilfe bei unserer defekten Heizung. Klare Empfehlung.“
-            <br><br><strong>- Markus Weber</strong>
-        </div>
-
-        <div class="card review">
-            ⭐⭐⭐⭐⭐<br><br>
-            „Unsere Badsanierung wurde professionell umgesetzt.“
-            <br><br><strong>- Anna Keller</strong>
-        </div>
-    </div>
-</section>
-
-<section id="kontakt">
-    <h2>Kontakt</h2>
-
-    <div class="contact-box">
-        <p><strong>Telefon:</strong> <a href="tel:071112345678">0711 12345678</a></p>
-        <p><strong>E-Mail:</strong> <a href="mailto:info@heinz-mueller-heizung.de">info@heinz-mueller-heizung.de</a></p>
-        <p><strong>Adresse:</strong> Königstraße 10, 70173 Stuttgart</p>
-
-        <h3>Kontaktformular</h3>
-
-        <form>
-            <input type="text" placeholder="Ihr Name">
-            <input type="email" placeholder="Ihre E-Mail">
-            <input type="tel" placeholder="Ihre Telefonnummer">
-            <textarea rows="5" placeholder="Ihre Nachricht"></textarea>
-            <button type="button">Nachricht senden</button>
-        </form>
-
-        <p class="small">
-            Hinweis: Dieses Formular ist aktuell nur ein Design-Beispiel.
-            Für echte Nachrichten muss es später mit einem E-Mail-Dienst verbunden werden.
-        </p>
+    <div class="photo-box">
+        <img src="EB8E3220-00D0-48BE-8B87-549759420723.png" alt="Heinz Müller Heizungs- und Sanitärbetrieb Bilder">
     </div>
 </section>
 
 <section>
-    <h2>Standort</h2>
+    <h2>Kundenstimmen</h2>
 
+    <div class="grid">
+        <div class="card">⭐⭐⭐⭐⭐<br><br>„Sehr zuverlässig, freundlich und sauber gearbeitet.“<br><br><strong>– Familie Schneider</strong></div>
+        <div class="card">⭐⭐⭐⭐⭐<br><br>„Schnelle Hilfe bei unserer defekten Heizung. Klare Empfehlung.“<br><br><strong>– Markus Weber</strong></div>
+        <div class="card">⭐⭐⭐⭐⭐<br><br>„Die Badsanierung wurde professionell und pünktlich umgesetzt.“<br><br><strong>– Anna Keller</strong></div>
+    </div>
+</section>
+
+<section id="kontakt">
+    <h2>Kontakt aufnehmen</h2>
+
+    <div class="contact">
+        <div class="card">
+            <h3>Direktkontakt</h3>
+            <p><strong>Telefon:</strong><br><a href="tel:071112345678">0711 12345678</a></p>
+            <p><strong>E-Mail:</strong><br><a href="mailto:info@heinz-mueller-heizung.de">info@heinz-mueller-heizung.de</a></p>
+            <p><strong>Adresse:</strong><br>Königstraße 10, 70173 Stuttgart</p>
+            <p><strong>Öffnungszeiten:</strong><br>Mo–Fr: 08:00–17:00 Uhr</p>
+        </div>
+
+        <div class="card">
+            <h3>Anfrageformular</h3>
+            <form>
+                <input type="text" placeholder="Ihr Name">
+                <input type="email" placeholder="Ihre E-Mail">
+                <input type="tel" placeholder="Ihre Telefonnummer">
+                <textarea rows="5" placeholder="Worum geht es?"></textarea>
+                <button type="button">Nachricht senden</button>
+            </form>
+            <p class="note">Demo: Das Formular verschickt noch keine echte E-Mail.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Unser Standort</h2>
     <iframe
         src="https://www.google.com/maps?q=K%C3%B6nigstra%C3%9Fe%2010%2C%2070173%20Stuttgart&output=embed"
         width="100%"
-        height="350"
-        style="border:0; border-radius:14px;"
-        allowfullscreen=""
+        height="360"
+        style="border:0;border-radius:22px;"
         loading="lazy">
     </iframe>
 </section>
@@ -320,16 +470,20 @@ footer{
         Verantwortlich für den Inhalt: Max Mustermann
     </p>
 
-    <p class="small">
-        Hinweis: Dies ist eine Demo-Website mit Beispielangaben.
-        Für eine echte Firmenwebsite müssen Impressum, Datenschutz,
-        Telefonnummer, Adresse und rechtliche Angaben korrekt angepasst werden.
+    <p class="note">
+        Demo-Website mit Beispielangaben. Für eine echte Website müssen Impressum,
+        Datenschutz und Kontaktdaten rechtlich korrekt angepasst werden.
     </p>
 </section>
 
 <footer>
     © 2026 Heinz Müller Heizungs- und Sanitärbetrieb · Stuttgart
 </footer>
+
+<div class="floating">
+    <a href="tel:071112345678">☎ Anrufen</a>
+    <a class="whatsapp" href="https://wa.me/4917112345678">WhatsApp</a>
+</div>
 
 </body>
 </html>
